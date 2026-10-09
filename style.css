@@ -15,6 +15,9 @@ body{
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
+body.modal-open{
+  overflow:hidden;
+}
 img{
   display:block;
   max-width:100%;
@@ -34,6 +37,8 @@ button:focus-visible{
 
 .site{
   width:100%;
+  max-width:1500px;
+  margin:0 auto;
   padding:var(--pad);
 }
 
@@ -397,6 +402,51 @@ nav{
   text-transform:uppercase;
 }
 @media(max-width:760px){
+  .site{
+    padding:18px 18px 42px;
+  }
+
+  nav{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:12px;
+  }
+
+  .hero{
+    min-height:72vh;
+    padding:8vh 0 6vh;
+  }
+  .hero-title{
+    font-size:clamp(62px,20vw,130px);
+  }
+  .hero-subtitle{
+    margin-top:22px;
+  }
+  .projects,
+  .about,
+  .contact{
+    padding-top:120px;
+  }
+  .project-grid,
+  .about-columns,
+  .modal-info{
+    grid-template-columns:1fr;
+  }
+  .project:nth-child(even){
+    margin-top:0;
+  }
+  .project-meta{
+    grid-template-columns:1fr;
+  }
+  .project-info{
+    text-align:left;
+  }
+  .contact-bottom{
+    flex-direction:column;
+    gap:18px;
+  }
+  .socials{
+    gap:12px 20px;
+  }
   .gallery-grid{
     grid-template-columns:1fr;
     gap:12px;
